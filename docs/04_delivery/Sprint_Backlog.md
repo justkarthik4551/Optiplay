@@ -54,7 +54,7 @@
 ## Phase 6: Deployment & Hosting
 - [x] Create Deployment Guide documentation
 - [x] Create project-level README.md for GitHub
-- [ ] Initialize Git repository
-- [ ] Create .gitignore
-- [ ] Push to GitHub
+- [x] Initialize Git repository
+- [x] Create .gitignore
+- [x] Push to GitHub — **github.com/justkarthik4551/Optiplay** ✅
 - [ ] Deploy to Vercel
