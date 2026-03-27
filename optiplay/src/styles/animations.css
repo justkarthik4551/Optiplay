@@ -1,0 +1,89 @@
+/* ============================================
+   OptiPlay — Keyframe Animations
+   Ref: docs/05_UI_UX_Design_System.md §5
+   ============================================ */
+
+/* ── Page fade-in ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Slide up (for toasts / modals) ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scale pop (for cards appearing) ── */
+@keyframes scalePop {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Bounce snap (item drop into bag) ── */
+@keyframes snapBounce {
+  0%   { transform: scale(0.95); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* ── Subtle pulse glow ── */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-primary-glow); }
+  50%      { box-shadow: 0 0 40px var(--accent-primary-glow-strong); }
+}
+
+/* ── Danger flash (capacity exceeded) ── */
+@keyframes dangerFlash {
+  0%, 100% { border-color: var(--surface-border); }
+  50%      { border-color: var(--accent-danger); box-shadow: 0 0 20px var(--accent-danger-glow); }
+}
+
+/* ── Float effect (hero decoration) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* ── Shimmer (loading / decoration) ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Spin (loading indicator) ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Confetti burst (victory) ── */
+@keyframes confettiFall {
+  0%   { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Stagger animation utility classes ── */
+.animate-fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-scale-pop {
+  animation: scalePop var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }

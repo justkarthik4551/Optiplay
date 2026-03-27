@@ -1,0 +1,100 @@
+.game-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  text-align: left;
+  min-height: 260px;
+  transition: all var(--duration-normal) var(--ease-out);
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.game-card:not(.game-card--disabled):hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-glow-primary), var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.game-card:not(.game-card--disabled):hover::before {
+  opacity: 1;
+}
+
+.game-card--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-card__icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.2));
+}
+
+.game-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.game-card__tagline {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  flex: 1;
+}
+
+.game-card__action {
+  margin-top: auto;
+  width: 100%;
+}
+
+.game-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.game-card:not(.game-card--disabled):hover .game-card__btn {
+  background: var(--accent-primary-hover);
+  box-shadow: 0 0 16px var(--accent-primary-glow);
+}
+
+.game-card__arrow {
+  font-size: var(--font-size-xs);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.game-card:not(.game-card--disabled):hover .game-card__arrow {
+  transform: translateX(3px);
+}
+
+.game-card__coming-soon {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}

@@ -1,0 +1,71 @@
+/* ============================================
+   DroppableZone Styles
+   ============================================ */
+
+.zone {
+  background: var(--surface-glass);
+  backdrop-filter: var(--surface-blur);
+  -webkit-backdrop-filter: var(--surface-blur);
+  border: 2px dashed var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+/* ── Drop hover highlight ── */
+.zone--over {
+  border-color: var(--accent-primary);
+  box-shadow: inset 0 0 30px rgba(139, 92, 246, 0.08), 0 0 16px var(--accent-primary-glow);
+}
+
+.zone--bag.zone--over {
+  border-color: var(--accent-success);
+  box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.08), 0 0 16px rgba(16, 185, 129, 0.25);
+}
+
+/* ── Capacity exceeded flash ── */
+.zone--flash {
+  animation: flash-danger 0.4s ease-out;
+  border-color: var(--accent-danger) !important;
+}
+
+@keyframes flash-danger {
+  0% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.5); }
+  100% { box-shadow: none; }
+}
+
+/* ── Bag specific styling ── */
+.zone--bag {
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.03);
+}
+
+/* ── Zone header ── */
+.zone__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zone__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.zone__count {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* ── Zone content ── */
+.zone__content {
+  flex: 1;
+}

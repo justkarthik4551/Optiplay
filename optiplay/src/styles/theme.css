@@ -1,0 +1,167 @@
+/* ============================================
+   OptiPlay — Global Theme & Resets
+   Ref: docs/05_UI_UX_Design_System.md
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Multi-layered cosmic void background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    /* Vignette — dark edges */
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%),
+    /* Primary gradient */
+    radial-gradient(ellipse at 20% 0%, rgba(30, 27, 75, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 0%, rgba(30, 58, 138, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(15, 23, 42, 0.8) 0%, transparent 60%),
+    /* Base */
+    var(--bg-primary);
+}
+
+/* ── Subtle star dots (CSS-only starfield) ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.15) 50%, transparent 50%),
+    radial-gradient(1px 1px at 20% 35%, rgba(255,255,255,0.1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 35% 8%, rgba(255,255,255,0.12) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 60%, rgba(255,255,255,0.08) 50%, transparent 50%),
+    radial-gradient(1px 1px at 55% 25%, rgba(255,255,255,0.14) 50%, transparent 50%),
+    radial-gradient(1px 1px at 65% 78%, rgba(255,255,255,0.06) 50%, transparent 50%),
+    radial-gradient(1px 1px at 75% 42%, rgba(255,255,255,0.11) 50%, transparent 50%),
+    radial-gradient(1px 1px at 85% 12%, rgba(255,255,255,0.09) 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 55%, rgba(255,255,255,0.13) 50%, transparent 50%),
+    radial-gradient(1px 1px at 5% 80%, rgba(255,255,255,0.07) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 30% 90%, rgba(139,92,246,0.2) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 70% 5%, rgba(59,130,246,0.15) 50%, transparent 50%),
+    radial-gradient(1px 1px at 15% 50%, rgba(255,255,255,0.1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 50% 45%, rgba(255,255,255,0.08) 50%, transparent 50%),
+    radial-gradient(1px 1px at 82% 68%, rgba(255,255,255,0.12) 50%, transparent 50%),
+    radial-gradient(1px 1px at 42% 82%, rgba(255,255,255,0.06) 50%, transparent 50%),
+    radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,0.1) 50%, transparent 50%),
+    radial-gradient(1px 1px at 25% 65%, rgba(255,255,255,0.09) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 95% 30%, rgba(139,92,246,0.12) 50%, transparent 50%);
+  pointer-events: none;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ── Links ── */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+}
+
+/* ── Buttons (base) ── */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-base);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+/* ── Glassmorphic Card Utility ── */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: var(--surface-blur);
+  -webkit-backdrop-filter: var(--surface-blur);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+}
+
+.glass:hover {
+  background: var(--surface-glass-hover);
+  border-color: var(--surface-border-hover);
+}

@@ -1,0 +1,278 @@
+/* ============================================
+   Game Config Page Styles
+   ============================================ */
+
+.config {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+/* ── Header ── */
+.config__header {
+  text-align: center;
+  width: 100%;
+}
+
+.config__back {
+  background: none;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-md);
+  transition: color var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+}
+
+.config__back:hover {
+  color: var(--accent-primary);
+}
+
+.config__title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.config__subtitle {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+/* ── Mode Cards ── */
+.config__modes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.config__mode-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  background: var(--surface-glass);
+}
+
+.config__mode-card--active {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 20px var(--accent-primary-glow), inset 0 0 30px rgba(139, 92, 246, 0.05);
+}
+
+.config__mode-card:not(.config__mode-card--active):hover {
+  transform: translateY(-2px);
+  border-color: var(--surface-border-hover);
+}
+
+.config__mode-emoji {
+  font-size: 1.8rem;
+}
+
+.config__mode-label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.config__mode-desc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  flex: 1;
+}
+
+.config__mode-radio {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.config__mode-radio--selected {
+  color: var(--accent-primary);
+  text-shadow: 0 0 8px var(--accent-primary-glow);
+}
+
+/* ── Custom Mode Form ── */
+.config__custom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  background: var(--surface-glass);
+  backdrop-filter: var(--surface-blur);
+  -webkit-backdrop-filter: var(--surface-blur);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+}
+
+.config__custom-title {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.config__custom-capacity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.config__custom-capacity label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.config__input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+  width: 100%;
+}
+
+.config__input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary-glow);
+}
+
+.config__input--sm {
+  width: 100px;
+}
+
+.config__input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Custom Table ── */
+.config__custom-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.config__custom-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 100px 100px 36px;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.config__custom-row--header {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  font-weight: var(--font-weight-medium);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.config__custom-idx {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.config__remove-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-danger);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.config__remove-btn:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.config__remove-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.config__add-btn {
+  align-self: flex-start;
+  background: none;
+  color: var(--accent-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-xs) 0;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.config__add-btn:hover:not(:disabled) {
+  color: var(--accent-primary-hover);
+}
+
+.config__add-btn:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.config__error {
+  font-size: var(--font-size-sm);
+  color: var(--accent-danger);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Start Button ── */
+.config__start-btn {
+  padding: var(--space-md) var(--space-2xl);
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: 0 4px 16px var(--accent-primary-glow);
+}
+
+.config__start-btn:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-primary-glow-strong);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .config__modes {
+    grid-template-columns: 1fr;
+  }
+
+  .config__custom-row {
+    grid-template-columns: 24px 1fr 70px 70px 28px;
+    gap: var(--space-xs);
+  }
+
+  .config__input--sm {
+    width: 100%;
+  }
+}

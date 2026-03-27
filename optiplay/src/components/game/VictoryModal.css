@@ -1,0 +1,193 @@
+/* ============================================
+   Victory Modal + Confetti Styles
+   ============================================ */
+
+/* ── Overlay ── */
+.victory-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  transition: background 0.5s var(--ease-out), backdrop-filter 0.5s var(--ease-out);
+}
+
+.victory-overlay--visible {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Confetti ── */
+.victory-confetti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 301;
+}
+
+.victory-confetti__piece {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  animation: confetti-fall 3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ── Modal Card ── */
+.victory-card {
+  position: relative;
+  z-index: 302;
+  max-width: 480px;
+  width: 90vw;
+  padding: var(--space-2xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s var(--ease-out);
+}
+
+.victory-card--visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.victory-card__celebration {
+  font-size: 3.5rem;
+  animation: bounce-celebrate 0.6s ease-out;
+}
+
+@keyframes bounce-celebrate {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.victory-card__title {
+  font-size: var(--font-size-2xl);
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-success), #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.victory-card__rating {
+  font-size: 2rem;
+  letter-spacing: 4px;
+}
+
+.victory-card__rating-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* ── Stats ── */
+.victory-card__stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin: var(--space-md) 0;
+}
+
+.victory-card__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.victory-card__stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+}
+
+.victory-card__stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ── Educational Insight ── */
+.victory-card__insight {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: left;
+  width: 100%;
+}
+
+.victory-card__insight h4 {
+  font-size: var(--font-size-sm);
+  color: var(--accent-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.victory-card__insight p {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.victory-card__insight strong {
+  color: var(--text-primary);
+}
+
+/* ── Buttons ── */
+.victory-card__actions {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.victory-card__btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.victory-card__btn--primary {
+  background: var(--accent-success);
+  color: white;
+}
+
+.victory-card__btn--primary:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.victory-card__btn--ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--surface-border);
+}
+
+.victory-card__btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
