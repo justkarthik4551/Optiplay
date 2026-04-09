@@ -29,6 +29,7 @@ export default function PackThatBag() {
   const [hint, setHint] = useState(null);
   const [showVictory, setShowVictory] = useState(false);
   const [victoryShown, setVictoryShown] = useState(false);
+  const [usedAutoSolve, setUsedAutoSolve] = useState(false);
 
   const maxWeight = Math.max(...state.items.map(i => i.weight), 1);
 
@@ -102,12 +103,14 @@ export default function PackThatBag() {
     setHint(null);
     setShowVictory(false);
     setVictoryShown(false);
+    setUsedAutoSolve(false);
   };
 
   const handleShowOptimal = () => {
     dispatch({ type: 'PACK_OPTIMAL_SOLUTION' });
     setHint(null);
     setVictoryShown(false);
+    setUsedAutoSolve(true);
     // Slight delay so the items animate into the bag first
     setTimeout(() => {
       setShowVictory(true);
@@ -118,6 +121,7 @@ export default function PackThatBag() {
   const handlePlayAgain = () => {
     setShowVictory(false);
     setVictoryShown(false);
+    setUsedAutoSolve(false);
     navigate('/pack-that-bag/config');
   };
 
@@ -222,6 +226,8 @@ export default function PackThatBag() {
         capacity={state.capacity}
         hintsUsed={state.hintsUsed}
         mode={state.mode}
+        autoSolved={usedAutoSolve}
+        onClose={() => setShowVictory(false)}
         onPlayAgain={handlePlayAgain}
       />
     </main>

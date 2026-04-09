@@ -10,10 +10,11 @@ import './VictoryModal.css';
  * @param {number} weight — total weight used
  * @param {number} capacity
  * @param {number} hintsUsed
- * @param {string} mode — 'classic' | 'random' | 'custom'
+ * @param {boolean} autoSolved
+ * @param {Function} onClose
  * @param {Function} onPlayAgain
  */
-export default function VictoryModal({ show, value, weight, capacity, hintsUsed, mode, onPlayAgain }) {
+export default function VictoryModal({ show, value, weight, capacity, hintsUsed, mode, autoSolved, onClose, onPlayAgain }) {
   const navigate = useNavigate();
   const [confetti, setConfetti] = useState([]);
   const [visible, setVisible] = useState(false);
@@ -40,8 +41,8 @@ export default function VictoryModal({ show, value, weight, capacity, hintsUsed,
 
   if (!show) return null;
 
-  const rating = hintsUsed === 0 ? '⭐⭐⭐' : hintsUsed <= 2 ? '⭐⭐' : '⭐';
-  const ratingLabel = hintsUsed === 0 ? 'Perfect — No hints used!' : hintsUsed <= 2 ? 'Great job!' : 'Good effort!';
+  const rating = autoSolved ? '🤖 Auto-Solved' : (hintsUsed === 0 ? '⭐⭐⭐' : hintsUsed <= 2 ? '⭐⭐' : '⭐');
+  const ratingLabel = autoSolved ? 'You used the AI to find the answer!' : (hintsUsed === 0 ? 'Perfect — No hints used!' : hintsUsed <= 2 ? 'Great job!' : 'Good effort!');
 
   return (
     <div className={`victory-overlay ${visible ? 'victory-overlay--visible' : ''}`}>
@@ -101,8 +102,11 @@ export default function VictoryModal({ show, value, weight, capacity, hintsUsed,
           <button className="victory-card__btn victory-card__btn--primary" onClick={onPlayAgain}>
             🔄 Play Again
           </button>
+          <button className="victory-card__btn victory-card__btn--ghost" onClick={onClose}>
+            👀 View Board
+          </button>
           <button className="victory-card__btn victory-card__btn--ghost" onClick={() => navigate('/')}>
-            🏠 Back to Hub
+            🏠 Hub
           </button>
         </div>
       </div>
