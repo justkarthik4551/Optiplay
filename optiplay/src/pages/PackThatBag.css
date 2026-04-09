@@ -93,6 +93,24 @@
   transform: translateY(-1px);
 }
 
+/* ── Optimal Button ── */
+.game__optimal-btn {
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--duration-fast) var(--ease-out);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.game__optimal-btn:hover {
+  background: rgba(245, 158, 11, 0.22);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
+  transform: translateY(-1px);
+}
+
 .game__reset-btn {
   padding: var(--space-xs) var(--space-md);
   background: rgba(255, 255, 255, 0.06);

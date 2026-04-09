@@ -1,4 +1,5 @@
 import iitrLogo from '../../assets/iitr_logo.png';
+import iitrSeal from '../../assets/iitr_seal.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -14,7 +15,8 @@ export default function Navbar() {
             About
           </a>
           <div className="navbar-divider" />
-          <img src={iitrLogo} alt="IIT Roorkee" className="navbar-iitr-logo" />
+          <img src={iitrLogo} alt="IIT Roorkee" className="navbar-iitr-logo navbar-iitr-logo--desktop" />
+          <img src={iitrSeal} alt="IIT Roorkee" className="navbar-iitr-logo navbar-iitr-logo--mobile" />
         </div>
       </div>
     </nav>

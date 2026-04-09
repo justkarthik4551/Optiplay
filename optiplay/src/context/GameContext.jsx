@@ -3,7 +3,7 @@ import { dpSolver } from '../utils/dpSolver';
 
 /**
  * GameContext — Shared state for the Pack That Bag game.
- * Ref: docs/02_System_Architecture.md §3 (State Shape)
+ * Ref: docs/03_engineering/02_System_Architecture.md §3 (State Shape)
  */
 
 const GameContext = createContext(null);
@@ -13,6 +13,7 @@ const initialState = {
   capacity: 0,
   items: [],            // { id, name, weight, value, emoji, inBag: boolean }
   optimalValue: 0,
+  optimalItemIds: [],   // IDs of the optimal item set (from DP solver traceback)
   hintsUsed: 0,
   gameStarted: false,
 };
@@ -22,13 +23,14 @@ function gameReducer(state, action) {
     case 'START_GAME': {
       const { mode, items, capacity } = action.payload;
       const gameItems = items.map(item => ({ ...item, inBag: false }));
-      const { optimalValue } = dpSolver(gameItems, capacity);
+      const { optimalValue, optimalSet } = dpSolver(gameItems, capacity);
       return {
         ...state,
         mode,
         capacity,
         items: gameItems,
         optimalValue,
+        optimalItemIds: optimalSet,
         hintsUsed: 0,
         gameStarted: true,
       };
@@ -46,6 +48,19 @@ function gameReducer(state, action) {
 
     case 'USE_HINT':
       return { ...state, hintsUsed: state.hintsUsed + 1 };
+
+    // Instantly pack the optimal solution — moves all optimal items to bag,
+    // everything else back to inventory.
+    case 'PACK_OPTIMAL_SOLUTION': {
+      const optimalSet = new Set(state.optimalItemIds);
+      return {
+        ...state,
+        items: state.items.map(item => ({
+          ...item,
+          inBag: optimalSet.has(item.id),
+        })),
+      };
+    }
 
     case 'RESET_BAG':
       return {

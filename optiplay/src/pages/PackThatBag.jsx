@@ -104,6 +104,17 @@ export default function PackThatBag() {
     setVictoryShown(false);
   };
 
+  const handleShowOptimal = () => {
+    dispatch({ type: 'PACK_OPTIMAL_SOLUTION' });
+    setHint(null);
+    setVictoryShown(false);
+    // Slight delay so the items animate into the bag first
+    setTimeout(() => {
+      setShowVictory(true);
+      setVictoryShown(true);
+    }, 400);
+  };
+
   const handlePlayAgain = () => {
     setShowVictory(false);
     setVictoryShown(false);
@@ -124,6 +135,9 @@ export default function PackThatBag() {
           <button className="game__hint-btn" onClick={handleHint} id="hint-btn">
             💡 Hint
           </button>
+          <button className="game__optimal-btn" onClick={handleShowOptimal} id="optimal-btn">
+            ✨ Show Optimal
+          </button>
           <button className="game__reset-btn" onClick={handleReset} id="reset-btn">
             🔄 Reset
           </button>
@@ -135,7 +149,7 @@ export default function PackThatBag() {
         <div className="game__stat-item">
           <span className="game__stat-label">Weight</span>
           <ProgressBar current={currentWeight} max={state.capacity} danger={capacityFlash} />
-          <span className="game__stat-value">{currentWeight} / {state.capacity} lbs</span>
+          <span className="game__stat-value">{currentWeight} / {state.capacity} kg</span>
         </div>
         <div className="game__stat-item game__stat-item--hints">
           <span className="game__stat-label">Hints</span>
@@ -143,7 +157,7 @@ export default function PackThatBag() {
         </div>
         <div className="game__stat-item game__stat-item--value">
           <span className="game__stat-label">Value</span>
-          <span className="game__stat-value game__stat-value--big">${currentValue}</span>
+          <span className="game__stat-value game__stat-value--big">₹{currentValue}</span>
         </div>
       </div>
 

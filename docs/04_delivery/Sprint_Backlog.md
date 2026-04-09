@@ -57,4 +57,14 @@
 - [x] Initialize Git repository
 - [x] Create .gitignore
 - [x] Push to GitHub — **github.com/justkarthik4551/Optiplay** ✅
-- [ ] Deploy to Vercel
+- [x] Deploy to Vercel — **COMPLETE!** 🎉
+
+## Phase 7: Indian Localization & Show Optimal Solution
+- [x] Replace 12 classic items with Indian products (Microwave, Mixer Grinder, Cricket Kit, Saregama Carvaan, Alphonso Mangoes, Madhubani Art, etc.)
+- [x] Currency changed globally: $ → ₹ in all UI components
+- [x] Units changed globally: lbs → kg in all UI components
+- [x] Added `optimalItemIds` to GameContext state (from dpSolver traceback)
+- [x] Added `PACK_OPTIMAL_SOLUTION` reducer action
+- [x] Added ✨ Show Optimal button (amber/gold styling) in game header
+- [x] Victory Modal fires automatically after Show Optimal — **verified in browser** ✅
+- [x] Updated docs/03_engineering/04_Algorithms_and_Logic.md with new item names, ₹, kg, and Show Optimal section

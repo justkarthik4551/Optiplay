@@ -67,14 +67,28 @@
   background: var(--surface-border);
 }
 
-.navbar-iitr-logo {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  filter: invert(1) brightness(2) drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
-  transition: filter var(--duration-fast) var(--ease-out);
+.navbar-iitr-logo--desktop {
+  height: 48px;
+  display: block;
 }
 
-.navbar-iitr-logo:hover {
-  filter: invert(1) brightness(2.5) drop-shadow(0 0 16px rgba(139, 92, 246, 0.5));
+.navbar-iitr-logo--mobile {
+  height: 40px;
+  display: none;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-iitr-logo--desktop {
+    display: none;
+  }
+  .navbar-iitr-logo--mobile {
+    display: block;
+  }
+  .navbar-title {
+    display: none;
+  }
+  .navbar-logo {
+    font-size: var(--font-size-2xl);
+  }
 }

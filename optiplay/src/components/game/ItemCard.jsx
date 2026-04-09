@@ -22,8 +22,8 @@ export default function ItemCard({ item, maxWeight = 10, isDragging = false }) {
       <span className="item-card__emoji">{item.emoji}</span>
       <span className="item-card__name">{item.name}</span>
       <div className="item-card__stats">
-        <span className="item-card__value">${item.value}</span>
-        <span className="item-card__weight">{item.weight} lb</span>
+        <span className="item-card__value">₹{item.value}</span>
+        <span className="item-card__weight">{item.weight} kg</span>
       </div>
     </div>
   );

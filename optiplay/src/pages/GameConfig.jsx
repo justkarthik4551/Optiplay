@@ -6,16 +6,16 @@ import './GameConfig.css';
 
 // ── Random item name pool ──
 const RANDOM_NAMES = [
-  { name: 'Laptop', emoji: '💻' }, { name: 'Headphones', emoji: '🎧' },
-  { name: 'Watch', emoji: '⌚' }, { name: 'Drone', emoji: '🚁' },
-  { name: 'Guitar', emoji: '🎸' }, { name: 'Sneakers', emoji: '👟' },
-  { name: 'Backpack', emoji: '🎒' }, { name: 'Sunglasses', emoji: '🕶️' },
-  { name: 'Book Set', emoji: '📚' }, { name: 'Telescope', emoji: '🔭' },
-  { name: 'Skateboard', emoji: '🛹' }, { name: 'Ukulele', emoji: '🪕' },
-  { name: 'Perfume', emoji: '🧴' }, { name: 'Lamp', emoji: '💡' },
-  { name: 'Binoculars', emoji: '🔍' }, { name: 'Blender', emoji: '🫙' },
-  { name: 'Clock', emoji: '🕰️' }, { name: 'Jacket', emoji: '🧥' },
-  { name: 'Toolkit', emoji: '🧰' }, { name: 'Vase', emoji: '🏺' },
+  { name: 'Gaming Laptop', emoji: '💻' }, { name: 'Cricket Bat', emoji: '🏏' },
+  { name: 'Smart Watch', emoji: '⌚' }, { name: 'Drone', emoji: '🚁' },
+  { name: 'Sitar', emoji: '🪕' }, { name: 'Sneakers', emoji: '👟' },
+  { name: 'School Bag', emoji: '🎒' }, { name: 'Sunglasses', emoji: '🕶️' },
+  { name: 'Tiffin Box', emoji: '🍱' }, { name: 'Telescope', emoji: '🔭' },
+  { name: 'Skateboard', emoji: '🛹' }, { name: 'Tabla Set', emoji: '🥁' },
+  { name: 'Perfume', emoji: '🧴' }, { name: 'LED Lamp', emoji: '💡' },
+  { name: 'Binoculars', emoji: '🔍' }, { name: 'Mixer Grinder', emoji: '🌪️' },
+  { name: 'Wall Clock', emoji: '🕰️' }, { name: 'Nehru Jacket', emoji: '🧥' },
+  { name: 'Toolkit', emoji: '🧰' }, { name: 'Flower Vase', emoji: '🏺' },
 ];
 
 function generateRandomItems() {
@@ -38,7 +38,7 @@ const MODES = [
     id: 'classic',
     label: 'Classic',
     emoji: '📋',
-    desc: 'The original 12 items from the OR textbook. 26 lbs bag.',
+    desc: 'The original 12 items initialized for the Indian context. 26 kg bag.',
     default: true,
   },
   {
@@ -168,7 +168,7 @@ export default function GameConfig() {
           <h3 className="config__custom-title">Define Your Problem</h3>
 
           <div className="config__custom-capacity">
-            <label>Bag Capacity (lbs)</label>
+            <label>Bag Capacity (kg)</label>
             <input
               type="number"
               min="1"
@@ -184,8 +184,8 @@ export default function GameConfig() {
             <div className="config__custom-row config__custom-row--header">
               <span>#</span>
               <span>Name</span>
-              <span>Weight (lbs)</span>
-              <span>Value ($)</span>
+              <span>Weight (kg)</span>
+              <span>Value (₹)</span>
               <span></span>
             </div>
             {customItems.map((item, idx) => (
@@ -201,7 +201,7 @@ export default function GameConfig() {
                 <input
                   type="number"
                   min="1"
-                  placeholder="lbs"
+                  placeholder="kg"
                   value={item.weight}
                   onChange={e => updateCustomItem(idx, 'weight', e.target.value)}
                   className="config__input config__input--sm"
@@ -209,7 +209,7 @@ export default function GameConfig() {
                 <input
                   type="number"
                   min="1"
-                  placeholder="$"
+                  placeholder="₹"
                   value={item.value}
                   onChange={e => updateCustomItem(idx, 'value', e.target.value)}
                   className="config__input config__input--sm"

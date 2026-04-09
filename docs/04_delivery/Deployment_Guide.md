@@ -89,6 +89,13 @@ OR Problem/                     ← Git root
 - Add a custom domain (e.g., `optiplay.yourdomain.com`)
 - Vercel provides free SSL via Let's Encrypt
 
+### 4.5 AI Agent & IDE Integration (Optional)
+If you are developing inside an AI-assisted IDE (like your current setup), Vercel provides a native CLI plugin. Running:
+```bash
+npx plugins add vercel/vercel-plugin
+```
+installs the Vercel plugin directly into the AI agent's environment. This allows the AI (me) to directly communicate with your Vercel account to trigger deployments, check build status, and pull environment variables without you having to use the Vercel dashboard manually.
+
 ---
 
 ## 5. Environment Notes

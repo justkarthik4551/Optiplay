@@ -29,7 +29,7 @@ export function hintEngine(items, capacity) {
     const best = addable[0].item;
     return {
       type: 'add',
-      message: `Add the ${best.name} ($${best.value}, ${best.weight} lbs)`,
+      message: `Add the ${best.name} (₹${best.value}, ${best.weight} kg)`,
     };
   }
 
@@ -53,7 +53,7 @@ export function hintEngine(items, capacity) {
   if (bestSwap) {
     return {
       type: 'swap',
-      message: `Swap ${bestSwap.remove.name} ($${bestSwap.remove.value}) for ${bestSwap.add.name} ($${bestSwap.add.value}) → +$${bestSwap.gain}`,
+      message: `Swap ${bestSwap.remove.name} (₹${bestSwap.remove.value}) for ${bestSwap.add.name} (₹${bestSwap.add.value}) → +₹${bestSwap.gain}`,
     };
   }
 
@@ -100,7 +100,7 @@ export function hintEngine(items, capacity) {
     const addNames = bestMultiSwap.add.map(i => i.name).join(' + ');
     return {
       type: 'swap',
-      message: `Remove ${removeNames} and add ${addNames} → +$${bestMultiSwap.gain}`,
+      message: `Remove ${removeNames} and add ${addNames} → +₹${bestMultiSwap.gain}`,
     };
   }
 

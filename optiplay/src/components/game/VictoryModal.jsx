@@ -72,12 +72,12 @@ export default function VictoryModal({ show, value, weight, capacity, hintsUsed,
 
         <div className="victory-card__stats">
           <div className="victory-card__stat">
-            <span className="victory-card__stat-value">${value}</span>
+            <span className="victory-card__stat-value">₹{value}</span>
             <span className="victory-card__stat-label">Total Value</span>
           </div>
           <div className="victory-card__stat">
             <span className="victory-card__stat-value">{weight}/{capacity}</span>
-            <span className="victory-card__stat-label">Weight (lbs)</span>
+            <span className="victory-card__stat-label">Weight (kg)</span>
           </div>
           <div className="victory-card__stat">
             <span className="victory-card__stat-value">{hintsUsed}</span>

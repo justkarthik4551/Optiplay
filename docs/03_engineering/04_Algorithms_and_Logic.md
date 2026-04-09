@@ -10,7 +10,7 @@
 
 ### Problem Definition (0/1 Knapsack)
 Given:
-- `N` items, each with a `weight` (integer, lbs) and `value` (integer, $).
+- `N` items, each with a `weight` (integer, kg) and `value` (integer, ₹).
 - A bag with integer `capacity` W.
 
 Find the subset of items that maximizes total value without exceeding capacity W. Each item is either fully included or excluded (0/1 constraint — no fractional items).
@@ -38,14 +38,14 @@ Starting from `DP[N][W]`, walk backwards:
 - **Space Optimization:** A 1D rolling array can be used (iterating W downward) to reduce space from O(N × W) to O(W). Optional for our use case.
 - **Return Value:** `{ optimalValue: number, optimalSet: string[] }` where `optimalSet` contains item IDs.
 
-### Verified Reference Values (Classic Mode)
+### Verified Reference Values (Classic Mode — Indian Localization)
 | Parameter | Value |
 |-----------|-------|
-| Items | 12 (Computer, Keurig, Printer, PlayStation, Projector, Robo Vac, Wine, Tablet, Painting, Speaker, Toaster, Camera) |
-| Capacity | 26 lbs |
-| **Optimal Value** | **$1,166** |
-| **Optimal Set** | Camera ($100, 2 lbs), Painting ($130, 3 lbs), Tablet ($145, 3 lbs), Wine ($161, 4 lbs), Projector ($190, 4 lbs), PlayStation ($200, 5 lbs), Keurig ($240, 5 lbs) |
-| **Optimal Weight** | 26 lbs (exactly at capacity) |
+| Items | 12 (Microwave, Mixer Grinder, Pressure Cooker, Cricket Kit, Saregama Carvaan, Air Fryer, Alphonso Mangoes, Smartwatch, Madhubani Art, BT Speaker, Sandwich Maker, DSLR Camera) |
+| Capacity | 26 kg |
+| **Optimal Value** | **₹1,166** |
+| **Optimal Set** | DSLR Camera (₹100, 2 kg), Madhubani Art (₹130, 3 kg), Smartwatch (₹145, 3 kg), Alphonso Mangoes (₹161, 4 kg), Saregama Carvaan (₹190, 4 kg), Cricket Kit (₹200, 5 kg), Mixer Grinder (₹240, 5 kg) |
+| **Optimal Weight** | 26 kg (exactly at capacity) |
 | **Optimal Item Count** | 7 |
 
 ---
@@ -75,20 +75,37 @@ The engine evaluates tiers in order and returns the first valid suggestion found
 - Iterate over items where `inBag === false`.
 - If `currentWeight + item.weight ≤ capacity`, the item can be added.
 - Among all addable items, select the one with the **highest value-to-weight ratio** (`item.value / item.weight`).
-- Return: `{ type: 'add', message: 'Add the [Item Name] ($[value], [weight] lbs)' }`
+- Return: `{ type: 'add', message: 'Add the [Item Name] (₹[value], [weight] kg)' }`
 
 **Tier 2 — SWAP 1-for-1**
 - For each item X in the bag and item Y outside the bag:
   - Check: `currentWeight - X.weight + Y.weight ≤ capacity`
   - Check: `Y.value - X.value > 0` (strict improvement)
 - Among all valid swaps, select the one with the **greatest net value gain** (`Y.value - X.value`).
-- Return: `{ type: 'swap', message: 'Swap [X] for [Y] (+$[gain])' }`
+- Return: `{ type: 'swap', message: 'Swap [X] for [Y] (+₹[gain])' }`
 
 **Tier 3 — SWAP 1-for-2 or 2-for-1**
 - Remove 1 item from the bag, attempt to add 2 items from outside (or vice versa).
 - Same validity checks: weight ≤ capacity, net value > 0.
 - Select the combination with the greatest net value gain.
-- Return: `{ type: 'swap', message: 'Remove [X] and add [Y1] + [Y2] (+$[gain])' }`
+- Return: `{ type: 'swap', message: 'Remove [X] and add [Y1] + [Y2] (+₹[gain])' }`
+
+---
+
+## 3. Show Optimal Solution (`PACK_OPTIMAL_SOLUTION`)
+
+A UI button ("✨ Show Optimal") allows the user to instantly reveal the DP-optimal item set. This is designed as a teaching tool — the user can explore what the algorithm chose and why.
+
+### How It Works
+1. On `START_GAME`, `dpSolver` returns both `optimalValue` and `optimalSet` (the IDs of optimal items).
+2. These IDs are stored in `state.optimalItemIds`.
+3. When the user clicks "✨ Show Optimal", the `PACK_OPTIMAL_SOLUTION` action fires in the reducer.
+4. The reducer uses a `Set` of optimal IDs to flip all items: optimal items get `inBag: true`, everything else `inBag: false`.
+5. The Victory Modal fires 400ms later (after items animate into the bag).
+
+### Pedagogical Intent
+The feature is intentionally placed *after* the Hint button. The intended student journey is:
+- Try → Get stuck → Use 💡 Hint → Try again → Still stuck → Use ✨ Show Optimal → Learn from the solution.
 
 **Tier 4 — OPTIMAL (no improvement found)**
 - Return: `{ type: 'optimal', message: 'Your solution is already optimal! 🎉' }`
