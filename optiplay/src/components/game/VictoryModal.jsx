@@ -10,11 +10,13 @@ import './VictoryModal.css';
  * @param {number} weight — total weight used
  * @param {number} capacity
  * @param {number} hintsUsed
- * @param {boolean} autoSolved
+ * @param {number}   [volumeUsed]  - total volume used (Game 2 only)
+ * @param {number}   [maxVolume]   - volume capacity (Game 2 only)
+ * @param {boolean}  autoSolved
  * @param {Function} onClose
  * @param {Function} onPlayAgain
  */
-export default function VictoryModal({ show, value, weight, capacity, hintsUsed, mode, autoSolved, onClose, onPlayAgain }) {
+export default function VictoryModal({ show, value, weight, capacity, volumeUsed, maxVolume, hintsUsed, mode, autoSolved, onClose, onPlayAgain }) {
   const navigate = useNavigate();
   const [confetti, setConfetti] = useState([]);
   const [visible, setVisible] = useState(false);
@@ -80,6 +82,12 @@ export default function VictoryModal({ show, value, weight, capacity, hintsUsed,
             <span className="victory-card__stat-value">{weight}/{capacity}</span>
             <span className="victory-card__stat-label">Weight (kg)</span>
           </div>
+          {volumeUsed != null && maxVolume != null && (
+            <div className="victory-card__stat">
+              <span className="victory-card__stat-value">{volumeUsed}/{maxVolume}</span>
+              <span className="victory-card__stat-label">Volume (cu.ft.)</span>
+            </div>
+          )}
           <div className="victory-card__stat">
             <span className="victory-card__stat-value">{hintsUsed}</span>
             <span className="victory-card__stat-label">Hints Used</span>

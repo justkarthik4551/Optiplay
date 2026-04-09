@@ -12,6 +12,14 @@ const GAMES = [
     route: '/pack-that-bag/config',
   },
   {
+    id: 'pack-the-truck',
+    title: 'Pack the Truck!',
+    tagline: 'Two constraints — weight AND volume. Can you maximize the value of your load?',
+    emoji: '🚚',
+    available: true,
+    route: '/pack-the-truck/config',
+  },
+  {
     id: 'traveling-salesman',
     title: 'Find the Route',
     tagline: 'Discover the shortest path visiting every city. The classic TSP challenge.',
@@ -78,8 +86,8 @@ export default function Hub() {
       {/* Stats / Social Proof */}
       <section className="hub__stats animate-fade-in delay-4">
         <div className="hub__stat glass">
-          <span className="hub__stat-value">1</span>
-          <span className="hub__stat-label">Game Live</span>
+          <span className="hub__stat-value">2</span>
+          <span className="hub__stat-label">Games Live</span>
         </div>
         <div className="hub__stat glass">
           <span className="hub__stat-value">OR</span>

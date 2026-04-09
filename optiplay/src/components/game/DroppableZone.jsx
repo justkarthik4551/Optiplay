@@ -4,7 +4,7 @@ import './DroppableZone.css';
 /**
  * DroppableZone — A drop target (Inventory or Bag).
  */
-export default function DroppableZone({ id, label, itemCount, isBag = false, flash = false, children }) {
+export default function DroppableZone({ id, label, itemCount, icon, isBag = false, flash = false, children }) {
   const { isOver, setNodeRef } = useDroppable({ id });
 
   const classNames = [
@@ -18,7 +18,7 @@ export default function DroppableZone({ id, label, itemCount, isBag = false, fla
     <div ref={setNodeRef} className={classNames} id={id}>
       <div className="zone__header">
         <h3 className="zone__label">
-          {isBag ? '🎒' : '📦'} {label}
+          {icon ?? (isBag ? '🎒' : '📦')} {label}
         </h3>
         <span className="zone__count">{itemCount} item{itemCount !== 1 ? 's' : ''}</span>
       </div>

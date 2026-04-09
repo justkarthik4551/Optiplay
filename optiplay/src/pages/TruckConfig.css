@@ -1,0 +1,20 @@
+/* ============================================================
+   TruckConfig — Overrides & extensions for the Truck config page.
+   All base layout styles are imported from GameConfig.css.
+   ============================================================ */
+
+/* Dual capacity inputs side by side */
+.truck-config__capacities {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.truck-config__capacities .config__custom-capacity {
+  flex: 1;
+}
+
+/* Custom table header — 6 columns instead of 5 */
+.truck-config__row--header,
+.truck-config__row {
+  grid-template-columns: 28px 1fr 90px 100px 90px 36px;
+}

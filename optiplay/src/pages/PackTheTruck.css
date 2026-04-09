@@ -1,0 +1,19 @@
+/* ============================================================
+   PackTheTruck — Overrides & extensions on top of PackThatBag.css
+   ============================================================ */
+
+/* 4-column stats bar to accommodate weight + volume */
+.game__stats--truck {
+  grid-template-columns: 2fr 2fr 1fr 1.5fr;
+}
+
+/* Volume progress bar — orange/amber accent */
+.game__stat-item--volume .progress__fill--ok {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+.game__stat-item--volume .progress__fill--warn {
+  background: linear-gradient(90deg, #b45309, #d97706);
+}
+.game__stat-item--volume .progress__fill--full {
+  background: linear-gradient(90deg, #92400e, #b45309);
+}
