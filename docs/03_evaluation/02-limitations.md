@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [09 Future Work](./09-future-work.md) · [07 Experiments](./07-experiments.md)
+> **Cross-references:** [09 Future Work](./03-future-work.md) · [07 Experiments](./01-experiments.md)
 >
 > *Honest scope boundaries. Examiners appreciate self-awareness. Explaining limitations demonstrates mastery.*
 
@@ -59,7 +59,7 @@
 
 **Why it exists:** Conducting a proper educational trial is beyond the scope of a single-semester project and requires IRB approval, a control group, validated assessment instruments, and longitudinal follow-up.
 
-**Current evidence:** The platform's design is grounded in established learning science principles (active learning, immediate feedback, concrete-before-abstract). See `docs/problem-definition.md §3` for the literature base.
+**Current evidence:** The platform's design is grounded in established learning science principles (active learning, immediate feedback, concrete-before-abstract). See `docs/01_theory_and_design/01-problem-definition.md §3` for the literature base.
 
 **Future resolution:** Partner with DoMS faculty to integrate OptiPlay into the OR curriculum and measure pre/post comprehension on knapsack-related assessment questions.
 

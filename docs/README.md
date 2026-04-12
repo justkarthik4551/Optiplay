@@ -21,22 +21,22 @@ This folder contains the complete documentation for OptiPlay, organized into two
 
 ↓ then:
 
-1. [01 — Problem Definition](./01-problem-definition.md) — Why OR? Why gamification? What is the hypothesis?
-2. [02 — Game Design](./02-game-design.md) — How each game maps to OR. UX decisions. Learning outcomes.
-3. [03 — Algorithms](./03-algorithms.md) — Formal proofs, DP derivation, greedy failure counter-example.
-4. [06 — Decisions](./06-decisions.md) — Why DP over greedy? Why web over Power BI? (The "why" file)
+1. [01 — Problem Definition](./01_theory_and_design/01-problem-definition.md) — Why OR? Why gamification? What is the hypothesis?
+2. [02 — Game Design](./01_theory_and_design/02-game-design.md) — How each game maps to OR. UX decisions. Learning outcomes.
+3. [03 — Algorithms](./01_theory_and_design/03-algorithms.md) — Formal proofs, DP derivation, greedy failure counter-example.
+4. [06 — Decisions](./02_engineering/03-decisions.md) — Why DP over greedy? Why web over Power BI? (The "why" file)
 
 ### For Deep Technical Grilling
-5. [04 — System Architecture](./04-system-architecture.md) — Data flow, component model, state management
-6. [05 — Code Explained](./05-code-explained.md) — Module-by-module breakdown with example I/O
+5. [04 — System Architecture](./02_engineering/01-system-architecture.md) — Data flow, component model, state management
+6. [05 — Code Explained](./02_engineering/02-code-explained.md) — Module-by-module breakdown with example I/O
 
 ### For Honest Evaluation
-7. [07 — Experiments](./07-experiments.md) — Algorithm verification + user testing observations
-8. [08 — Limitations](./08-limitations.md) — Honest scope boundaries (7 documented limitations)
-9. [09 — Future Work](./09-future-work.md) — AI adaptation, new games, analytics roadmap
+7. [07 — Experiments](./03_evaluation/01-experiments.md) — Algorithm verification + user testing observations
+8. [08 — Limitations](./03_evaluation/02-limitations.md) — Honest scope boundaries (7 documented limitations)
+9. [09 — Future Work](./03_evaluation/03-future-work.md) — AI adaptation, new games, analytics roadmap
 
 ### For Rapid Q&A Prep
-→ [FAQ](./FAQ.md) — 20 anticipated viva questions with spoken, defensible answers
+→ [FAQ](./04_viva_prep/01-faq.md) — 20 anticipated viva questions with spoken, defensible answers
 
 ---
 
@@ -44,16 +44,16 @@ This folder contains the complete documentation for OptiPlay, organized into two
 
 | # | Document | Key Questions Answered |
 |---|----------|----------------------|
-| 01 | [Problem Definition](./01-problem-definition.md) | What is OR? Why do students struggle? Why gamification? What's the hypothesis? |
-| 02 | [Game Design](./02-game-design.md) | How do the games map to OR problems? What are the UX decisions? What do students learn? |
-| 03 | [Algorithms](./03-algorithms.md) | What are the formal formulations? Why does greedy fail? How does DP work? What is the complexity? |
-| 04 | [System Architecture](./04-system-architecture.md) | What is the tech stack? How is state managed? How does data flow? |
-| 05 | [Code Explained](./05-code-explained.md) | What does each module do? What are key functions? Example I/O for every solver. |
-| 06 | [Decisions](./06-decisions.md) | Why DP not B&B? Why client-side? Why React not Power BI? Why Indian items? |
-| 07 | [Experiments](./07-experiments.md) | How was correctness verified? What did users do? What were the benchmarks? |
-| 08 | [Limitations](./08-limitations.md) | What are the scope boundaries? What doesn't work at scale? |
-| 09 | [Future Work](./09-future-work.md) | Where does this go next? AI adaptation, new games, analytics, PWA? |
-| — | [FAQ](./FAQ.md) | 20 Q&As: theory, design, technical, business relevance |
+| 01 | [Problem Definition](./01_theory_and_design/01-problem-definition.md) | What is OR? Why do students struggle? Why gamification? What's the hypothesis? |
+| 02 | [Game Design](./01_theory_and_design/02-game-design.md) | How do the games map to OR problems? What are the UX decisions? What do students learn? |
+| 03 | [Algorithms](./01_theory_and_design/03-algorithms.md) | What are the formal formulations? Why does greedy fail? How does DP work? What is the complexity? |
+| 04 | [System Architecture](./02_engineering/01-system-architecture.md) | What is the tech stack? How is state managed? How does data flow? |
+| 05 | [Code Explained](./02_engineering/02-code-explained.md) | What does each module do? What are key functions? Example I/O for every solver. |
+| 06 | [Decisions](./02_engineering/03-decisions.md) | Why DP not B&B? Why client-side? Why React not Power BI? Why Indian items? |
+| 07 | [Experiments](./03_evaluation/01-experiments.md) | How was correctness verified? What did users do? What were the benchmarks? |
+| 08 | [Limitations](./03_evaluation/02-limitations.md) | What are the scope boundaries? What doesn't work at scale? |
+| 09 | [Future Work](./03_evaluation/03-future-work.md) | Where does this go next? AI adaptation, new games, analytics, PWA? |
+| — | [FAQ](./04_viva_prep/01-faq.md) | 20 Q&As: theory, design, technical, business relevance |
 
 ---
 

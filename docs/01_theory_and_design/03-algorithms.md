@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [02 Game Design](./02-game-design.md) · [04 System Architecture](./04-system-architecture.md) · [05 Code Explained](./05-code-explained.md) · [06 Decisions](./06-decisions.md)
+> **Cross-references:** [02 Game Design](./02-game-design.md) · [04 System Architecture](../02_engineering/01-system-architecture.md) · [05 Code Explained](../02_engineering/02-code-explained.md) · [06 Decisions](../02_engineering/03-decisions.md)
 
 ---
 
@@ -79,7 +79,7 @@ DP Optimal set: Mixer Grinder + Pressure Cooker + Saregama Carvaan +
                 (5+6+4+5+4+3+2 = 29? No...)
 ```
 
-> **Note:** The exact optimal set is computed by the DP solver at runtime and stored in `state.optimalItemIds`. The optimal value of **₹1,166** is verified in `classicItems.js` code comments and confirmed by brute-force enumeration (see [07 Experiments §1](./07-experiments.md)).
+> **Note:** The exact optimal set is computed by the DP solver at runtime and stored in `state.optimalItemIds`. The optimal value of **₹1,166** is verified in `classicItems.js` code comments and confirmed by brute-force enumeration (see [07 Experiments §1](../03_evaluation/01-experiments.md)).
 
 **Key takeaway:** Greedy produces a suboptimal solution (₹1,138) even when the bag is filled to capacity. The interaction between items means no simple ordering rule always works — this is the fundamental insight Dynamic Programming provides.
 
@@ -307,4 +307,4 @@ This is not accidental. Students who use all three tiers are, without knowing it
 | **Linear Programming Relaxation** | Gives fractional solutions. The 0/1 constraint is the entire point of the game. |
 | **Backend API (e.g., PuLP/Gurobi)** | Adds network latency, server costs, and deployment complexity. Client-side DP is faster for our problem scale. |
 
-See [06 Decisions](./06-decisions.md) for the full rationale.
+See [06 Decisions](../02_engineering/03-decisions.md) for the full rationale.

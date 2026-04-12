@@ -1,7 +1,9 @@
-# Problem Definition
+# 01 — Problem Definition
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [02 Game Design](./02-game-design.md) · [03 Algorithms](./03-algorithms.md)
 
 ---
 

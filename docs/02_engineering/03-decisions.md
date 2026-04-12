@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [03 Algorithms](./03-algorithms.md) · [04 System Architecture](./04-system-architecture.md) · [FAQ](./FAQ.md)
+> **Cross-references:** [03 Algorithms](../01_theory_and_design/03-algorithms.md) · [04 System Architecture](./01-system-architecture.md) · [FAQ](../04_viva_prep/01-faq.md)
 >
 > *Every significant architectural and design decision, with rationale. This document is your "why" file.*
 

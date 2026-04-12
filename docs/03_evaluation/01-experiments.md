@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [02 Game Design](./02-game-design.md) · [03 Algorithms](./03-algorithms.md) · [08 Limitations](./08-limitations.md)
+> **Cross-references:** [02 Game Design](../01_theory_and_design/02-game-design.md) · [03 Algorithms](../01_theory_and_design/03-algorithms.md) · [08 Limitations](./02-limitations.md)
 
 ---
 
@@ -32,7 +32,7 @@ This document describes the testing approach, observed outcomes, and analytical 
 
 **Verified optimal set:** Mixer Grinder + Pressure Cooker + Saregama Carvaan + Air Fryer + Alphonso Mangoes + Smartwatch + DSLR Camera (total: 26 kg, ₹1,166)
 
-*Cross-verified against `classicItems.js` data. See [02 Game Design §1.2](./02-game-design.md) for the full item table.*
+*Cross-verified against `classicItems.js` data. See [02 Game Design §1.2](../01_theory_and_design/02-game-design.md) for the full item table.*
 
 ---
 

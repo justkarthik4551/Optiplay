@@ -23,7 +23,7 @@ The Knapsack Problem is NP-hard in the strong sense when item weights are arbitr
 
 **Q: Why doesn't greedy work here?**
 
-Greedy for fractional knapsack works: take items in decreasing value-to-weight order, splitting the last item if needed. But for the 0/1 variant, items cannot be split. A greedy selection may use up capacity inefficiently, preventing the inclusion of a combination of smaller items that would have yielded more total value. See `docs/algorithms.md §1.2` for our specific counter-example (₹1,066 greedy vs. ₹1,166 DP optimal).
+Greedy for fractional knapsack works: take items in decreasing value-to-weight order, splitting the last item if needed. But for the 0/1 variant, items cannot be split. A greedy selection may use up capacity inefficiently, preventing the inclusion of a combination of smaller items that would have yielded more total value. See `docs/01_theory_and_design/03-algorithms.md §1.2` for our specific counter-example (₹1,138 greedy vs. ₹1,166 DP optimal).
 
 ---
 
@@ -89,7 +89,7 @@ Directly. The knapsack problem maps to: capital budgeting (projects = items, bud
 
 **Q: Why React and not a simpler tool?**
 
-The drag-and-drop interaction requires complex state management (which item is active, where it's being dropped, whether constraints are violated, when victory is reached). Vanilla JS would work but be harder to maintain. React's component model and @dnd-kit's accessibility-first DnD library make the implementation clean, testable, and extensible. See `docs/DECISIONS.md D-04` for full rationale.
+The drag-and-drop interaction requires complex state management (which item is active, where it's being dropped, whether constraints are violated, when victory is reached). Vanilla JS would work but be harder to maintain. React's component model and @dnd-kit's accessibility-first DnD library make the implementation clean, testable, and extensible. See `docs/02_engineering/03-decisions.md D-04` for full rationale.
 
 ---
 

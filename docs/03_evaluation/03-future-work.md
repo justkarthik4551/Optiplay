@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [08 Limitations](./08-limitations.md) · [01 Problem Definition](./01-problem-definition.md)
+> **Cross-references:** [08 Limitations](./02-limitations.md) · [01 Problem Definition](../01_theory_and_design/01-problem-definition.md)
 
 ---
 

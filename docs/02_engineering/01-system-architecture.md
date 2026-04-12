@@ -3,7 +3,7 @@
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> **Cross-references:** [03 Algorithms](./03-algorithms.md) · [05 Code Explained](./05-code-explained.md) · [06 Decisions](./06-decisions.md)
+> **Cross-references:** [03 Algorithms](../01_theory_and_design/03-algorithms.md) · [05 Code Explained](./02-code-explained.md) · [06 Decisions](./03-decisions.md)
 
 ---
 
