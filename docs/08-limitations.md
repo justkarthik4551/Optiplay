@@ -1,7 +1,9 @@
-# Limitations
+# 08 — Limitations
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [09 Future Work](./09-future-work.md) · [07 Experiments](./07-experiments.md)
 >
 > *Honest scope boundaries. Examiners appreciate self-awareness. Explaining limitations demonstrates mastery.*
 

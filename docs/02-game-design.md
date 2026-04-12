@@ -1,7 +1,9 @@
-# Game Design Document
+# 02 — Game Design
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [01 Problem Definition](./01-problem-definition.md) · [03 Algorithms](./03-algorithms.md) · [04 System Architecture](./04-system-architecture.md)
 
 ---
 
@@ -41,32 +43,32 @@ Optimal Value = ₹1,166
 Optimal Item Count = 7 items
 ```
 
-**Item set** (ordered by value-to-weight ratio, descending):
+**Item set** — source of truth: `optiplay/src/utils/classicItems.js`
 
 | Item | Weight (kg) | Value (₹) | V/W Ratio |
 |------|------------|-----------|-----------|
-| DSLR Camera | 2 | 100 | 50.0 |
-| Madhubani Art | 3 | 130 | 43.3 |
-| Smartwatch | 3 | 145 | 48.3 |
-| Alphonso Mangoes | 4 | 161 | 40.3 |
-| Saregama Carvaan | 4 | 190 | 47.5 |
-| Cricket Kit | 5 | 200 | 40.0 |
+| Microwave | 7 | 290 | 41.4 |
 | Mixer Grinder | 5 | 240 | 48.0 |
-| Sandwich Maker | 6 | 150 | 25.0 |
-| Air Fryer | 7 | 220 | 31.4 |
-| Pressure Cooker | 8 | 180 | 22.5 |
-| Microwave | 10 | 120 | 12.0 |
-| BT Speaker | 6 | 230 | 38.3 |
+| Pressure Cooker | 6 | 238 | 39.7 |
+| Cricket Kit | 5 | 200 | 40.0 |
+| Saregama Carvaan | 4 | 190 | 47.5 |
+| Air Fryer | 5 | 190 | 38.0 |
+| Alphonso Mangoes | 4 | 161 | 40.3 |
+| Smartwatch | 3 | 145 | 48.3 |
+| Madhubani Art | 3 | 130 | 43.3 |
+| BT Speaker | 3 | 123 | 41.0 |
+| Sandwich Maker | 3 | 110 | 36.7 |
+| DSLR Camera | 2 | 100 | 50.0 |
 
-*The item set is deliberately designed so that a pure greedy (highest ratio first) approach fails — a key pedagogical point.*
+*The item set is deliberately constructed so that a pure greedy (highest ratio first) approach is sub-optimal — the core pedagogical point. See [03 Algorithms §1.2](./03-algorithms.md) for the counter-example proof.*
 
 ### 1.3 Game Modes
 
 | Mode | Description | Pedagogical Purpose |
 |------|-------------|---------------------|
 | Classic | Fixed 12-item problem | Reproducible; used for class discussions |
-| Random | 6–14 items, random weights/values | Tests generalization; different every time |
-| Custom | User-defined items, weights, values, capacity | Lets students create and solve their own problems |
+| Random | **8–15 items**, weight 1–10 kg, value ₹50–₹500 | Tests generalization; different every run |
+| Custom | User-defined items, weights, values, capacity (max 20 items) | Lets students formulate and solve their own problems |
 
 ### 1.4 UX Design Decisions
 
@@ -126,6 +128,8 @@ U = 60 cu.ft. (truck volume limit)
 Optimal Value = ₹2,730
 Optimal Item Set = 6 items (LED TV, Microwave, Air Conditioner, Study Desk, Cricket Kit Bag, Suitcase)
 ```
+
+*Source of truth: `optiplay/src/utils/truckItems.js`. See [03 Algorithms §2](./03-algorithms.md) for the 3D DP derivation.*
 
 **Item set:**
 

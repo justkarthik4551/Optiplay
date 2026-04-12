@@ -1,7 +1,9 @@
-# Future Work
+# 09 — Future Work
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [08 Limitations](./08-limitations.md) · [01 Problem Definition](./01-problem-definition.md)
 
 ---
 

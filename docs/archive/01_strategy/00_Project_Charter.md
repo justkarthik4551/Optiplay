@@ -49,8 +49,8 @@
 | Constraint | Value | Source |
 |------------|-------|--------|
 | Classic Mode items | 12 (from the original PDF by Prof. Tallys Yunes) | [Session_1_game.pdf](../Session_1_game.pdf) |
-| Classic Mode capacity | 26 lbs | PDF |
-| Classic Mode optimal value | **$1,166** (7 items, 26 lbs) | Verified via DP solver |
+| Classic Mode capacity | **26 kg** | PDF (localized: original was lbs) |
+| Classic Mode optimal value | **₹1,166** (7 items, 26 kg) | Verified via DP solver |
 | Custom Mode item cap | 20 items max | UX + performance safeguard |
 | Hint Engine latency | < 50 ms | Imperceptible to user |
 

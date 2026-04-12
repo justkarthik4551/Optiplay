@@ -1,6 +1,6 @@
 /**
  * DP Solver — 0/1 Knapsack via Bottom-Up Dynamic Programming
- * Ref: docs/04_Algorithms_and_Logic.md §1
+ * Ref: docs/03-algorithms.md §1
  *
  * @param {Array<{id: string, weight: number, value: number}>} items
  * @param {number} capacity - Maximum bag weight (W)

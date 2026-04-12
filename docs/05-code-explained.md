@@ -1,9 +1,11 @@
-# Code Explained
+# 05 — Code Explained
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
 >
-> *This document is your anti-grill shield for the viva. Read it alongside the actual source files.*
+> **Cross-references:** [03 Algorithms](./03-algorithms.md) · [04 System Architecture](./04-system-architecture.md) · [06 Decisions](./06-decisions.md)
+>
+> *Read this alongside the actual source files in `optiplay/src/`.*
 
 ---
 
@@ -37,21 +39,31 @@ export function dpSolver(items, capacity) {
 ### Example I/O
 
 ```javascript
+// Three items: A(weight=2, value=6), B(weight=3, value=10), C(weight=4, value=12)
+// Capacity = 5
+
 Input:
-  items = [
-    { id: 'a', weight: 2, value: 6 },
-    { id: 'b', weight: 3, value: 10 }
-  ]
-  capacity = 4
+  items    = [ {id:'a', weight:2, value:6},
+               {id:'b', weight:3, value:10},
+               {id:'c', weight:4, value:12} ]
+  capacity = 5
+
+DP table (rows = items 0..3, cols = capacity 0..5):
+       w=0  w=1  w=2  w=3  w=4  w=5
+  i=0   0    0    0    0    0    0
+  i=1   0    0    6    6    6    6   ← only item A fits at w≥2
+  i=2   0    0    6   10   10   16   ← A+B=5 fits at w=5 → 16
+  i=3   0    0    6   10   12   16   ← C alone at w=4, A+B still best at w=5
 
 Output:
-  { optimalValue: 16, optimalSet: ['a', 'b'] }
-  // Both fit: 2+3=5 > 4? No wait — let me recalculate.
-  // cap=4: 'a' fits (w=2), 'b' alone fits (w=3), 'a'+'b' = w=5 > 4
-  // → optimal is 'b' alone = 10... or 'a' alone = 6?
-  // → DP[2][4] = max(DP[1][4], DP[1][4-3]+10) = max(6, 0+10) = 10
-  { optimalValue: 10, optimalSet: ['b'] }
+  { optimalValue: 16, optimalSet: ['b', 'a'] }
+  // Items A(v=6) + B(v=10) = 16, total weight = 2+3 = 5 ≤ 5 ✔
 ```
+
+**Traceback:** Starting from DP[3][5]=16: 
+- i=3: DP[3][5]=16 = DP[2][5]=16 → item C excluded
+- i=2: DP[2][5]=16 ≠ DP[1][5]=6 → item B **included**, w = 5-3 = 2  
+- i=1: DP[1][2]=6 ≠ DP[0][2]=0 → item A **included**
 
 ### Why This Matters in the Viva
 

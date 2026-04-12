@@ -1,6 +1,6 @@
 /**
  * Hint Engine — Tiered coaching for the 0/1 Knapsack game
- * Ref: docs/04_Algorithms_and_Logic.md §2
+ * Ref: docs/03-algorithms.md §3
  *
  * Provides exactly ONE actionable suggestion that strictly improves
  * the user's current total value without exceeding capacity.

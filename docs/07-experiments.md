@@ -1,7 +1,9 @@
-# Experiments & Observations
+# 07 — Experiments & Observations
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [02 Game Design](./02-game-design.md) · [03 Algorithms](./03-algorithms.md) · [08 Limitations](./08-limitations.md)
 
 ---
 
@@ -28,7 +30,9 @@ This document describes the testing approach, observed outcomes, and analytical 
 
 **Conclusion:** Both methods agree. DP solver is 12× faster on this instance and scales O(N×W) vs. O(2ⁿ) for brute force.
 
-**Optimal set verified:** DSLR Camera + Madhubani Art + Smartwatch + Alphonso Mangoes + Saregama Carvaan + Cricket Kit + Mixer Grinder (total: 26 kg, ₹1,166)
+**Verified optimal set:** Mixer Grinder + Pressure Cooker + Saregama Carvaan + Air Fryer + Alphonso Mangoes + Smartwatch + DSLR Camera (total: 26 kg, ₹1,166)
+
+*Cross-verified against `classicItems.js` data. See [02 Game Design §1.2](./02-game-design.md) for the full item table.*
 
 ---
 

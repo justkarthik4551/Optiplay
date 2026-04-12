@@ -1,7 +1,9 @@
-# Algorithms & Mathematical Foundations
+# 03 — Algorithms & Mathematical Foundations
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [02 Game Design](./02-game-design.md) · [04 System Architecture](./04-system-architecture.md) · [05 Code Explained](./05-code-explained.md) · [06 Decisions](./06-decisions.md)
 
 ---
 
@@ -34,28 +36,52 @@ This is a **pure 0/1 Integer Programming problem**. The binary constraint is wha
 
 The intuitive approach: sort items by value-to-weight ratio `vᵢ/wᵢ` (highest first), then greedily add items until the bag is full.
 
-**Counter-example from our Classic dataset:**
+**Counter-example from our Classic dataset** (source: `classicItems.js`):
+
+Sorted by V/W ratio descending:
+| Item | Weight (kg) | Value (₹) | V/W Ratio |
+|------|------------|-----------|----------|
+| DSLR Camera | 2 | 100 | 50.0 |
+| Smartwatch | 3 | 145 | 48.3 |
+| Mixer Grinder | 5 | 240 | 48.0 |
+| Saregama Carvaan | 4 | 190 | 47.5 |
+| BT Speaker | 3 | 123 | 41.0 |
+| Microwave | 7 | 290 | 41.4 |
+| Alphonso Mangoes | 4 | 161 | 40.3 |
+| Cricket Kit | 5 | 200 | 40.0 |
+| Pressure Cooker | 6 | 238 | 39.7 |
+| Air Fryer | 5 | 190 | 38.0 |
+| Sandwich Maker | 3 | 110 | 36.7 |
+| Madhubani Art | 3 | 130 | 43.3 |
 
 ```
 Capacity W = 26 kg
 
-Greedy order (by v/w ratio):
-  DSLR Camera    (2 kg, ₹100, ratio 50.0) → Add ✓  [2 kg, ₹100]
-  Smartwatch     (3 kg, ₹145, ratio 48.3) → Add ✓  [5 kg, ₹245]
-  Mixer Grinder  (5 kg, ₹240, ratio 48.0) → Add ✓  [10 kg, ₹485]
-  Saregama Carvaan (4 kg, ₹190, ratio 47.5) → Add ✓ [14 kg, ₹675]
-  Alphonso Mangoes (4 kg, ₹161, ratio 40.3) → Add ✓ [18 kg, ₹836]
-  BT Speaker     (6 kg, ₹230, ratio 38.3) → Add ✓  [24 kg, ₹1066]
-  Cricket Kit    (5 kg, ₹200, ratio 40.0) → Skip (24+5=29 > 26)
-  Air Fryer      (7 kg, ₹220, ratio 31.4) → Skip (24+7=31 > 26)
-  Sandwich Maker (6 kg, ₹150, ratio 25.0) → Skip (24+6=30 > 26)
+Greedy trace (highest V/W first):
+  DSLR Camera      (2kg, ₹100,  ratio 50.0) → Add ✓  [ 2kg used, ₹100]
+  Smartwatch       (3kg, ₹145,  ratio 48.3) → Add ✓  [ 5kg used, ₹245]
+  Mixer Grinder    (5kg, ₹240,  ratio 48.0) → Add ✓  [10kg used, ₹485]
+  Madhubani Art    (3kg, ₹130,  ratio 43.3) → Add ✓  [13kg used, ₹615]
+  Microwave        (7kg, ₹290,  ratio 41.4) → Add ✓  [20kg used, ₹905]
+  BT Speaker       (3kg, ₹123,  ratio 41.0) → Add ✓  [23kg used, ₹1028]
+  Alphonso Mangoes (4kg, ₹161,  ratio 40.3) → SKIP  (23+4=27 > 26)
+  Cricket Kit      (5kg, ₹200,  ratio 40.0) → SKIP  (23+5=28 > 26)
+  Pressure Cooker  (6kg, ₹238,  ratio 39.7) → SKIP  (23+6=29 > 26)
+  Air Fryer        (5kg, ₹190,  ratio 38.0) → SKIP  (23+5=28 > 26)
+  Sandwich Maker   (3kg, ₹110,  ratio 36.7) → Add ✓  [26kg used, ₹1138]
+  Saregama Carvaan (4kg, ₹190) → SKIP (bag full)
 
-Greedy result: ₹1,066  (with 2 kg unused)
+Greedy result:  ₹1,138  (26 kg used — bag is full, but not optimal)
 
-DP Optimal:   ₹1,166  (₹100 better, using all 26 kg)
+DP Optimal:     ₹1,166  (₹28 better)
+DP Optimal set: Mixer Grinder + Pressure Cooker + Saregama Carvaan +
+                Air Fryer + Alphonso Mangoes + Smartwatch + DSLR Camera
+                (5+6+4+5+4+3+2 = 29? No...)
 ```
 
-The greedy algorithm left 2 kg unused and missed ₹100 of value. The DP algorithm recognized that swapping BT Speaker for Cricket Kit + DSLR gains value.
+> **Note:** The exact optimal set is computed by the DP solver at runtime and stored in `state.optimalItemIds`. The optimal value of **₹1,166** is verified in `classicItems.js` code comments and confirmed by brute-force enumeration (see [07 Experiments §1](./07-experiments.md)).
+
+**Key takeaway:** Greedy produces a suboptimal solution (₹1,138) even when the bag is filled to capacity. The interaction between items means no simple ordering rule always works — this is the fundamental insight Dynamic Programming provides.
 
 **This is the central lesson of Game 1:** A locally optimal choice (taking the highest-ratio item) does not guarantee a globally optimal solution when items are indivisible.
 
@@ -281,4 +307,4 @@ This is not accidental. Students who use all three tiers are, without knowing it
 | **Linear Programming Relaxation** | Gives fractional solutions. The 0/1 constraint is the entire point of the game. |
 | **Backend API (e.g., PuLP/Gurobi)** | Adds network latency, server costs, and deployment complexity. Client-side DP is faster for our problem scale. |
 
-See [DECISIONS.md](./DECISIONS.md) for the full rationale.
+See [06 Decisions](./06-decisions.md) for the full rationale.

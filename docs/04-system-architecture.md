@@ -1,7 +1,9 @@
-# System Architecture
+# 04 — System Architecture
 
 > **OptiPlay — Gamified Operations Research Learning Platform**
 > Department of Management Studies · IIT Roorkee
+>
+> **Cross-references:** [03 Algorithms](./03-algorithms.md) · [05 Code Explained](./05-code-explained.md) · [06 Decisions](./06-decisions.md)
 
 ---
 
