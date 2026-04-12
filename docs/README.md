@@ -1,89 +1,65 @@
-# 📚 OptiPlay Documentation
+# Documentation Index
 
-> A gamified Operations Research platform — MBA (IS/IT) Project, Department of Management Studies, IIT Roorkee.
-
----
-
-## Documentation Structure
-
-The docs are organized into four layers, reflecting the natural flow from *why → what → how → when*:
-
-```
-docs/
-├── 01_strategy/       ← WHY are we building this?
-├── 02_product/        ← WHAT are we building?
-├── 03_engineering/    ← HOW do we build it?
-└── 04_delivery/       ← WHEN and how did we deliver?
-```
+> **OptiPlay — Gamified Operations Research Learning Platform**
+> Department of Management Studies · IIT Roorkee
 
 ---
 
-### 📐 01 — Strategy
-High-level vision, positioning, and competitive landscape.
+This folder contains the complete academic and technical documentation for OptiPlay. It is organized for two audiences:
 
-| # | Document | Description |
-|---|----------|-------------|
-| 00 | [Project Charter](./01_strategy/00_Project_Charter.md) | Executive summary, scope, tech stack, constraints, success criteria |
-| 09 | [Competitive Analysis](./01_strategy/09_Competitive_Analysis.md) | Landscape review of existing OR/optimization learning tools |
-
----
-
-### 🎯 02 — Product
-User-facing specifications: who uses it, what they see, how it feels.
-
-| # | Document | Description |
-|---|----------|-------------|
-| 01 | [Product Requirements (PRD)](./02_product/01_PRD.md) | Features, functional requirements, MVP definition |
-| 05 | [UI/UX Design System](./02_product/05_UI_UX_Design_System.md) | Dark glassmorphic theme, design tokens, component patterns |
-| 06 | [User Personas & Journey](./02_product/06_User_Personas_and_Journey.md) | Target users, needs, and end-to-end journey maps |
-| 07 | [User Stories & Acceptance](./02_product/07_User_Stories_and_Acceptance_Criteria.md) | BDD-style stories with testable acceptance criteria |
-| 08 | [Wireframes & Screen Flow](./02_product/08_Wireframes_and_Screen_Flow.md) | ASCII wireframes and navigation flow diagrams |
-
----
-
-### ⚙️ 03 — Engineering
-Technical specifications: architecture, algorithms, data models.
-
-| # | Document | Description |
-|---|----------|-------------|
-| 02 | [System Architecture](./03_engineering/02_System_Architecture.md) | Folder structure, component hierarchy, state management |
-| 04 | [Algorithms & Logic](./03_engineering/04_Algorithms_and_Logic.md) | DP solver specification, hint engine tiers, verified reference values |
-
----
-
-### 🚀 04 — Delivery
-Planning, execution tracking, and post-build documentation.
-
-| # | Document | Description |
-|---|----------|-------------|
-| 03 | [Iterative Development Plan](./04_delivery/03_Iterative_Development_Plan.md) | 5-phase build plan with verification gates |
-| 10 | [Risk Register](./04_delivery/10_Risk_Register.md) | Identified risks, mitigations, and contingencies |
-| 11 | [Project Timeline](./04_delivery/11_Project_Timeline.md) | Gantt-style timeline with milestones |
-| — | [Sprint Backlog](./04_delivery/Sprint_Backlog.md) | Live task tracker (all phases ✅ complete) |
-| — | [Build Walkthrough](./04_delivery/Build_Walkthrough.md) | Post-build summary with verification evidence |
-| — | [Deployment Guide](./04_delivery/Deployment_Guide.md) | Vercel hosting setup, repo structure, cost analysis |
-
----
-
-## Quick Links
-
-| Resource | Path |
-|----------|------|
-| 🏠 Application source code | [`/optiplay/`](../optiplay/) |
-| 🧮 DP Solver | [`/optiplay/src/utils/dpSolver.js`](../optiplay/src/utils/dpSolver.js) |
-| 💡 Hint Engine | [`/optiplay/src/utils/hintEngine.js`](../optiplay/src/utils/hintEngine.js) |
-| 🧪 Algorithm Tests | [`/optiplay/src/utils/testAlgorithms.mjs`](../optiplay/src/utils/testAlgorithms.mjs) |
-| 📄 Original OR Problem | [`/Session_1_game.pdf`](../Session_1_game.pdf) |
+- **Viva evaluation:** A structured reference system so every question has a home
+- **Technical continuation:** Future developers can understand every architectural and algorithmic decision
 
 ---
 
 ## Reading Order
 
-For a first-time reader (e.g., thesis reviewer), the recommended reading order is:
+### For a Viva Examiner (15-minute overview)
+1. [README.md](../README.md) — What the project is and why it exists
+2. [problem-definition.md](./problem-definition.md) — The OR education gap and the gamification hypothesis
+3. [algorithms.md](./algorithms.md) — The mathematics behind the solvers
+4. [DECISIONS.md](./DECISIONS.md) — Why these choices were made
 
-1. **Project Charter** → understand the "why"
-2. **PRD** → understand the "what"
-3. **User Personas** → understand the "who"
-4. **Algorithms & Logic** → understand the OR core
-5. **System Architecture** → understand the code structure
-6. **Build Walkthrough** → see what was actually delivered
+### For Deep Technical Review
+1. [system-architecture.md](./system-architecture.md) — Component model, state management, data flow
+2. [code-explained.md](./code-explained.md) — Module-by-module code walkthrough
+3. [game-design.md](./game-design.md) — OR problem mapping and UX rationale
+4. [experiments.md](./experiments.md) — Algorithm verification and observations
+
+### For Rapid Oral Examination Prep
+- [FAQ.md](./FAQ.md) — 20 anticipated viva questions with spoken answers
+
+### For Balanced Assessment
+- [limitations.md](./limitations.md) — Honest scope boundaries
+- [future-work.md](./future-work.md) — Roadmap and research directions
+
+---
+
+## Document Map
+
+| Document | What It Answers |
+|----------|----------------|
+| [problem-definition.md](./problem-definition.md) | Why OR? Why gamification? What's the hypothesis? |
+| [game-design.md](./game-design.md) | How each game maps to OR theory. UX decisions. Learning outcomes. |
+| [algorithms.md](./algorithms.md) | Formal problem statements. Greedy failure proof. DP derivation. Hint engine design. |
+| [system-architecture.md](./system-architecture.md) | Tech stack. Folder structure. State management. Data flow diagram. |
+| [code-explained.md](./code-explained.md) | Every module: purpose, key functions, example I/O. |
+| [DECISIONS.md](./DECISIONS.md) | DP vs. Greedy. No backend. React vs. Power BI. Vanilla CSS. Indian localization. |
+| [experiments.md](./experiments.md) | Algorithm correctness verification. User testing observations. Performance benchmarks. |
+| [limitations.md](./limitations.md) | Scale limits. No persistence. No formal validation. Mobile UX. |
+| [future-work.md](./future-work.md) | AI adaptation. New games. Analytics. Multi-player. PWA. |
+| [FAQ.md](./FAQ.md) | 20 viva Q&As covering theory, design, technical, and business relevance. |
+
+---
+
+## What Happened to the Old Docs?
+
+The original documentation was organized into strategic folders (`01_strategy/`, `02_product/`, `03_engineering/`, `04_delivery/`) reflecting a product development process. Those documents capture the **process** of building OptiPlay.
+
+The new documentation (this folder's root-level files) is organized by **intellectual content** — designed for a viva audience that needs to quickly locate answers to specific questions, not trace a development timeline.
+
+Both sets of documents are preserved in the repository.
+
+---
+
+*Last updated: April 2026*

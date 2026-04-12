@@ -19,20 +19,6 @@ const GAMES = [
     available: true,
     route: '/pack-the-truck/config',
   },
-  {
-    id: 'traveling-salesman',
-    title: 'Find the Route',
-    tagline: 'Discover the shortest path visiting every city. The classic TSP challenge.',
-    emoji: '🗺️',
-    available: false,
-  },
-  {
-    id: 'job-scheduler',
-    title: 'Schedule It!',
-    tagline: 'Assign jobs to machines to minimize total time. A scheduling puzzle.',
-    emoji: '📅',
-    available: false,
-  },
 ];
 
 export default function Hub() {
