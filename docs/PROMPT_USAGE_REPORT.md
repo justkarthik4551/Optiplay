@@ -51,6 +51,8 @@
 
 **Outcome:** AI read the PDF, extracted the Knapsack problem specification, and drafted a comprehensive Implementation Plan.
 
+**Tokens (Est.):** ~203 Prompt / ~1256 Response
+
 ---
 
 ### P-02 · Document Storage Preference
@@ -62,6 +64,8 @@
 **Intent Analysis:** The user wanted all documentation to be physically stored in the project directory (`D:\DOMS IITR\Project\OR Problem\`), not in AI memory or cloud artifact stores. This was a workflow and governance preference establishing local-first documentation as a project norm.
 
 **Outcome:** Implementation Plan moved to `docs/00_Implementation_Plan.md`.
+
+**Tokens (Est.):** ~46 Prompt / ~3837 Response
 
 ---
 
@@ -75,6 +79,8 @@
 
 **Outcome:** AI listed 7 document types (UI/UX Design System, System Architecture, Algorithm Spec, etc.) with justifications for each.
 
+**Tokens (Est.):** ~110 Prompt / ~1803 Response
+
 ---
 
 ### P-04 · Expand and Structure Documentation
@@ -86,6 +92,8 @@
 **Intent Analysis:** The user recognized gaps in the initial doc list — specifically the absence of a PRD, an iterative plan to manage AI limitations, code architecture documentation, and folder structure. This prompt established the principle of comprehensive documentation before coding. The user also showed awareness of AI limitations (building everything at once fails).
 
 **Outcome:** Created `docs/` folder. Generated PRD, System Architecture, Iterative Development Plan, Algorithms & Logic, and UI/UX Design System documents (5 new files).
+
+**Tokens (Est.):** ~97 Prompt / ~1371 Response
 
 ---
 
@@ -99,6 +107,8 @@
 
 **Outcome:** AI identified 6 missing documents (User Personas & Journey, User Stories, Wireframes, Competitive Analysis, Risk Register, Project Timeline). User approved creation of all 6.
 
+**Tokens (Est.):** ~228 Prompt / ~1219 Response
+
 ---
 
 ### P-06 · Approve Missing Documentation
@@ -110,6 +120,8 @@
 **Intent Analysis:** Unambiguous approval to proceed with creating the 6 missing documentation files. A minimal but consequential prompt — one word that unlocked the creation of 6 substantive documents.
 
 **Outcome:** All 6 missing documents created (`06` through `11`).
+
+**Tokens (Est.):** ~213 Prompt / ~3833 Response
 
 ---
 
@@ -123,6 +135,8 @@
 
 **Outcome:** AI discovered critical errors (wrong optimal value of $1,465 vs. verified $1,166, inconsistent branding, mismatched file names) and rewrote all 12 documents with unified terminology, cross-references, and corrected figures.
 
+**Tokens (Est.):** ~179 Prompt / ~1156 Response
+
 ---
 
 ### P-08 · Development Kickoff
@@ -134,6 +148,8 @@
 **Intent Analysis:** A checkpoint prompt confirming that all pre-development documentation was satisfactory and the user was ready to transition from planning to execution. The question implies the user was satisfied with the documentation quality.
 
 **Outcome:** AI confirmed Milestone M0 complete and outlined Phase 1 (Foundation & Design System).
+
+**Tokens (Est.):** ~191 Prompt / ~2528 Response
 
 ---
 
@@ -147,6 +163,8 @@
 
 **Outcome:** React + Vite project initialized, CSS design system built, Hub landing page created, dev server started.
 
+**Tokens (Est.):** ~48 Prompt / ~922 Response
+
 ---
 
 ### P-10 · UI Refinement — Dark Void & IITR Logo
@@ -158,6 +176,8 @@
 **Intent Analysis:** A nuanced aesthetic direction — the user didn't want a "blank" dark page, but an immersive "cosmic void" that feels intentional and deep. The IIT Roorkee logo request was about institutional identity. The phrase "space that doesn't register" shows sophisticated design sensibility.
 
 **Outcome:** Multi-layer CSS background (radial gradients + star-field dots + vignette), IIT Roorkee logo downloaded and integrated into the hero section.
+
+**Tokens (Est.):** ~63 Prompt / ~1695 Response
 
 ---
 
@@ -171,6 +191,8 @@
 
 **Outcome:** Logo moved to Navbar component, right side. Hero section cleaned up.
 
+**Tokens (Est.):** ~99 Prompt / ~2869 Response
+
 ---
 
 ### P-12 · Phase 2 Authorization
@@ -182,6 +204,8 @@
 **Intent Analysis:** User confirmed Hub landing page visual was satisfactory and authorized moving to Phase 2 (OR Algorithms — the DP solver and hint engine).
 
 **Outcome:** `dpSolver.js`, `hintEngine.js`, `classicItems.js` built and verified with 17/17 tests passing.
+
+**Tokens (Est.):** ~194 Prompt / ~908 Response
 
 ---
 
@@ -195,6 +219,8 @@
 
 **Outcome:** `GameContext.jsx`, `GameConfig.jsx` (3 game modes + custom form) created and browser-verified.
 
+**Tokens (Est.):** ~183 Prompt / ~1614 Response
+
 ---
 
 ### P-14 · Phase 5 Inquiry + Authorization
@@ -206,6 +232,8 @@
 **Intent Analysis:** The user was concerned that the 💡 Hint button — a key feature — wasn't visible in the upcoming Phase 5 plan. This shows active engagement with the development plan rather than passive approval. The user was tracking feature completeness.
 
 **Outcome:** AI clarified that `hintEngine.js` was already built (Phase 2) and Phase 5 would wire it to the UI. HintToast component built and integrated.
+
+**Tokens (Est.):** ~223 Prompt / ~3461 Response
 
 ---
 
@@ -219,6 +247,8 @@
 
 **Outcome:** AI identified the resume point (Phase 5 CSS styling for hint button was missing), completed it, and tested the full hint flow.
 
+**Tokens (Est.):** ~219 Prompt / ~3032 Response
+
 ---
 
 ### P-16 · Walkthrough Storage + Documentation Structure
@@ -230,6 +260,8 @@
 **Intent Analysis:** The user noticed the walkthrough artifact was stored in the AI's memory directory, not the project's `docs/` folder. This prompted a structural reorganization of the entire `docs/` directory into thematic subfolders (strategy, product, engineering, delivery).
 
 **Outcome:** `docs/` restructured into 4 subfolders. Walkthrough moved to `docs/04_delivery/`. Root `README.md` created as documentation index.
+
+**Tokens (Est.):** ~147 Prompt / ~1702 Response
 
 ---
 
@@ -243,6 +275,8 @@
 
 **Outcome:** AI presented a comparison table of 5 free hosting options (Vercel, Netlify, GitHub Pages, Cloudflare Pages, Firebase) with recommendation rationale for Vercel.
 
+**Tokens (Est.):** ~154 Prompt / ~3213 Response
+
 ---
 
 ### P-18 · Deployment Documentation + GitHub Push
@@ -254,6 +288,8 @@
 **Intent Analysis:** Three concurrent goals: (1) document the deployment plan before executing, (2) update existing docs with hosting decisions, (3) initialize Git and push to GitHub. The "don't you agree?" reflects the user's collaborative working style — seeking AI validation of the approach.
 
 **Outcome:** `Deployment_Guide.md` created, Git initialized, initial commit of 64 files, pushed to `justkarthik4551/Optiplay` on GitHub.
+
+**Tokens (Est.):** ~111 Prompt / ~4115 Response
 
 ---
 
@@ -267,6 +303,8 @@
 
 **Outcome:** White logo asset integrated into Navbar, CSS invert filter removed.
 
+**Tokens (Est.):** ~41 Prompt / ~3908 Response
+
 ---
 
 ### P-20 · Push Changes to GitHub
@@ -278,6 +316,8 @@
 **Intent Analysis:** Routine git commit and push after a batch of UI changes. Specifying "origin" shows the user was aware of git remote terminology.
 
 **Outcome:** All changes committed and pushed to `main` branch on GitHub.
+
+**Tokens (Est.):** ~246 Prompt / ~1453 Response
 
 ---
 
@@ -291,6 +331,8 @@
 
 **Outcome:** Dev server started on `http://localhost:5173/`.
 
+**Tokens (Est.):** ~218 Prompt / ~2531 Response
+
 ---
 
 ### P-22 · Remove Unimplemented Games
@@ -302,6 +344,8 @@
 **Intent Analysis:** The Hub landing page showed 3 game cards (Pack That Bag, Find the Route, Schedule It!). Only Pack That Bag was implemented. The user correctly identified that showing "Coming Soon" cards for non-existent games was distracting and cluttered the UX.
 
 **Outcome:** Hub game card list reduced to only the 2 implemented games (Pack That Bag + Pack the Truck).
+
+**Tokens (Est.):** ~127 Prompt / ~1938 Response
 
 ---
 
@@ -315,6 +359,8 @@
 
 **Outcome:** Dev server verified running.
 
+**Tokens (Est.):** ~79 Prompt / ~1681 Response
+
 ---
 
 ### P-24 · Fix Alignment After Card Removal
@@ -326,6 +372,8 @@
 **Intent Analysis:** Removing game cards from a CSS grid can cause layout issues (e.g., 2 cards in a 3-column grid leaves an orphaned cell). The user noticed this misalignment and wanted it corrected. The secondary instruction ("keep deployment running") shows awareness of session state.
 
 **Outcome:** Hub game grid CSS adjusted to center-align 2 cards correctly.
+
+**Tokens (Est.):** ~235 Prompt / ~2178 Response
 
 ---
 
@@ -339,6 +387,8 @@
 
 **Outcome:** Server status checked and restarted.
 
+**Tokens (Est.):** ~66 Prompt / ~1179 Response
+
 ---
 
 ### P-26 · Complete Documentation Rework Request
@@ -350,6 +400,8 @@
 **Intent Analysis:** The user was dissatisfied with the existing documentation structure (MBA/product-focused with many files) and wanted a new documentation suite purpose-built for academic defense (viva). The framework was explicitly modeled on what a thesis examiner would look for. "Complete creative freedom" was a genuine delegation of information architecture decisions to the AI.
 
 **Outcome:** 10 new documentation files created in the new structure: `01-problem-definition.md`, `02-game-design.md`, `03-algorithms.md`, `04-system-architecture.md`, `05-code-explained.md`, `06-decisions.md`, `07-experiments.md`, `08-limitations.md`, `09-future-work.md`, `FAQ.md`.
+
+**Tokens (Est.):** ~137 Prompt / ~1196 Response
 
 ---
 
@@ -363,6 +415,8 @@
 
 **Outcome:** AI performed a full audit (`doc_audit.md`), verified all figures against source code (classicItems.js, truckItems.js), updated all cross-reference headers, and ensured logical arrangement.
 
+**Tokens (Est.):** ~131 Prompt / ~4271 Response
+
 ---
 
 ### P-28 · Subgroup Reorganization with Sequential Numbering
@@ -374,6 +428,8 @@
 **Intent Analysis:** Despite calling it "a simple task," this was a structural reorganization request. The user wanted the flat numbered files (`01` through `09` + FAQ) moved into thematic subdirectories (`01_theory_and_design`, `02_engineering`, etc.) with sequential numbering *within* each subdirectory. This creates a two-level hierarchy for professional presentation.
 
 **Outcome:** Files reorganized into 4 subgroups:
+
+**Tokens (Est.):** ~128 Prompt / ~3272 Response
 - `01_theory_and_design/` (01-03)
 - `02_engineering/` (01-03)
 - `03_evaluation/` (01-03)
@@ -392,6 +448,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** `truckSolver.js`, `truckHintEngine.js`, `truckItems.js`, `TruckContext.jsx`, `TruckConfig.jsx`, `PackTheTruck.jsx`, `TruckItemCard.jsx` all created. Game 2 verified working with optimal value ₹2,730.
 
+**Tokens (Est.):** ~107 Prompt / ~4105 Response
+
 ---
 
 ### P-30 · Indian Localization
@@ -403,6 +461,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** The original game used generic international items (Computer, Keurig, etc.) and dollar values. The user wanted culturally relevant Indian items and Rupee (₹) currency for authenticity and classroom relatability at IIT Roorkee.
 
 **Outcome:** `classicItems.js` updated with 12 Indian household items (Mixer Grinder, Pressure Cooker, Saregama Carvaan, Cricket Kit, etc.), all values converted to ₹, all documentation figures updated.
+
+**Tokens (Est.):** ~51 Prompt / ~3788 Response
 
 ---
 
@@ -416,6 +476,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** `PACK_OPTIMAL_SOLUTION` reducer action added, "✨ Show Optimal" button built, VictoryModal updated with `autoSolved` prop and 🤖 badge.
 
+**Tokens (Est.):** ~157 Prompt / ~2996 Response
+
 ---
 
 ### P-32 · Share Optimal Results Feature
@@ -427,6 +489,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** After the Victory Modal appears, the student can't see their bag contents. Adding a "View Board" button (which closes the modal) lets students examine the winning item set — reinforcing the learning outcome.
 
 **Outcome:** "View Board" button added to VictoryModal with `onClose` prop.
+
+**Tokens (Est.):** ~71 Prompt / ~2350 Response
 
 ---
 
@@ -440,6 +504,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** Both games browser-tested. Game 1: ₹1,166 optimal verified. Game 2: ₹2,730 optimal verified.
 
+**Tokens (Est.):** ~60 Prompt / ~3061 Response
+
 ---
 
 ### P-34 · Merge Documentation into Master File
@@ -451,6 +517,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** The user wanted a single-file version of all 10 documentation files combined — useful for sending to examiners, sharing as a PDF, or reading end-to-end without navigating between files. "Don't delete or change older files" explicitly preserves the modular structure while adding a convenience artifact.
 
 **Outcome:** `MASTER_DOCUMENTATION.md` created (1,984 lines, 10 sections, full Table of Contents). All original files untouched. Committed and pushed to GitHub.
+
+**Tokens (Est.):** ~115 Prompt / ~4197 Response
 
 ---
 
@@ -464,6 +532,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** This document.
 
+**Tokens (Est.):** ~200 Prompt / ~3333 Response
+
 ---
 
 ### P-36 · Local Deployment
@@ -475,6 +545,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** User requested to start the local development server again to test the application.
 
 **Outcome:** Executed `npm run dev` successfully.
+
+**Tokens (Est.):** ~132 Prompt / ~3164 Response
 
 ---
 
@@ -488,6 +560,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** Provided a detailed explanation differentiating the DP exact solver from the Local Search heuristic.
 
+**Tokens (Est.):** ~89 Prompt / ~3685 Response
+
 ---
 
 ### P-38 · Corner Case Identification
@@ -499,6 +573,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** A brilliant analytical observation by the user, identifying the core weakness of local search heuristics (getting stuck in local optima). The user demonstrated deep understanding of the algorithm's constraints.
 
 **Outcome:** Validated the user's observation, explained why it happens, and offered solutions (Complex Swap warning or Oracle Hint).
+
+**Tokens (Est.):** ~57 Prompt / ~987 Response
 
 ---
 
@@ -512,6 +588,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** Confirmed the deduction, formally distinguishing the DP exact solver from the greedy heuristic.
 
+**Tokens (Est.):** ~209 Prompt / ~1733 Response
+
 ---
 
 ### P-40 · DP Algorithm Deep Dive
@@ -523,6 +601,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** A request for a deeper technical dive into the exact solver.
 
 **Outcome:** Explained the bottom-up DP table construction, recurrence relation, and traceback mechanism in plain English.
+
+**Tokens (Est.):** ~237 Prompt / ~1985 Response
 
 ---
 
@@ -536,6 +616,8 @@ All cross-references updated. Committed and pushed to GitHub.
 
 **Outcome:** Manually traced the DP table and traceback for the custom case, proving it selects Item 1 + Item 2 (₹7), and contrasted it with the Hint Engine's behavior.
 
+**Tokens (Est.):** ~60 Prompt / ~4303 Response
+
 ---
 
 ### P-42 · Usage Report Update
@@ -547,6 +629,8 @@ All cross-references updated. Committed and pushed to GitHub.
 **Intent Analysis:** The user wanted this very report updated to reflect the latest deep-dive academic discussions.
 
 **Outcome:** Updated `PROMPT_USAGE_REPORT.md` with P-36 through P-42 and recalculated token estimates.
+
+**Tokens (Est.):** ~99 Prompt / ~4349 Response
 
 ---
 
