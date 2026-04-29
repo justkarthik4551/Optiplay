@@ -11,13 +11,13 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Prompts** | 43 |
+| **Total Prompts** | 50 |
 | **Conversation Start** | 26 March 2026, 19:35 IST |
-| **Conversation End** | 27 April 2026, 20:05 IST |
-| **Duration** | ~32 days (across multiple sessions) |
-| **Primary Model** | Gemini 3.1 Pro (High) → Claude Sonnet 4.6 (Thinking) |
-| **Dominant Prompt Category** | Feature Development (40%) |
-| **Second Dominant Category** | Documentation (28%) |
+| **Conversation End** | 29 April 2026, 20:50 IST |
+| **Duration** | ~34 days (across multiple sessions) |
+| **Primary Model** | Gemini 3.1 Pro (High) → Claude Sonnet 4.6 (Thinking) → Gemini 3.1 Pro (High) |
+| **Dominant Prompt Category** | Documentation (26%) |
+| **Second Dominant Category** | Feature Development (20%) |
 
 ---
 
@@ -25,14 +25,15 @@
 
 | Category | Count | % |
 |----------|-------|----|
-| 🏗️ **Project Initiation** | 4 | 9% |
-| 📄 **Documentation** | 12 | 28% |
-| 🎨 **UI / Design** | 6 | 14% |
-| ⚙️ **Feature Development** | 10 | 23% |
-| 🚀 **Deployment / DevOps** | 3 | 7% |
-| 🔧 **Troubleshooting** | 3 | 7% |
-| ♻️ **Refactoring / Cleanup** | 3 | 7% |
-| ✅ **Approval / Continuations** | 2 | 5% |
+| 📄 **Documentation** | 13 | 26% |
+| ⚙️ **Feature Development** | 10 | 20% |
+| 🎨 **UI / Design** | 6 | 12% |
+| 🧠 **Academic Discussion** | 5 | 10% |
+| 🏗️ **Project Initiation** | 4 | 8% |
+| 🚀 **Deployment / DevOps** | 4 | 8% |
+| 🔧 **Troubleshooting** | 3 | 6% |
+| ♻️ **Refactoring / Cleanup** | 3 | 6% |
+| ✅ **Approval / Continuations** | 2 | 4% |
 
 ---
 
@@ -465,6 +466,90 @@ All cross-references updated. Committed and pushed to GitHub.
 
 ---
 
+### P-36 · Local Deployment
+**Date:** 29 April 2026
+**Category:** 🚀 Deployment / DevOps
+
+> *"Deploy locally"*
+
+**Intent Analysis:** User requested to start the local development server again to test the application.
+
+**Outcome:** Executed `npm run dev` successfully.
+
+---
+
+### P-37 · Explain Algorithms
+**Date:** 29 April 2026
+**Category:** 🧠 Academic Discussion
+
+> *"Explain the algorithm for the Hint Enginer and the Optimal Solution"*
+
+**Intent Analysis:** An investigatory request to understand the underlying logic. The user is preparing for their viva/defense and needs to understand the technical "why" and "how".
+
+**Outcome:** Provided a detailed explanation differentiating the DP exact solver from the Local Search heuristic.
+
+---
+
+### P-38 · Corner Case Identification
+**Date:** 29 April 2026
+**Category:** 🧠 Academic Discussion
+
+> *"But then, are we sure this is working properly? because i already see a corner case. Suppose there is an item that is as heavy as 3 items not in the bag but it is just 1 value point less"*
+
+**Intent Analysis:** A brilliant analytical observation by the user, identifying the core weakness of local search heuristics (getting stuck in local optima). The user demonstrated deep understanding of the algorithm's constraints.
+
+**Outcome:** Validated the user's observation, explained why it happens, and offered solutions (Complex Swap warning or Oracle Hint).
+
+---
+
+### P-39 · Algorithm Deduction
+**Date:** 29 April 2026
+**Category:** 🧠 Academic Discussion
+
+> *"Seem like optimal solution is based on a different algorithm since that is working properly"*
+
+**Intent Analysis:** The user logically deduced that since the "Show Optimal" feature doesn't suffer from the corner case, it must use a different mathematical approach.
+
+**Outcome:** Confirmed the deduction, formally distinguishing the DP exact solver from the greedy heuristic.
+
+---
+
+### P-40 · DP Algorithm Deep Dive
+**Date:** 29 April 2026
+**Category:** 🧠 Academic Discussion
+
+> *"Whats the algorithm behind show optimal solution"*
+
+**Intent Analysis:** A request for a deeper technical dive into the exact solver.
+
+**Outcome:** Explained the bottom-up DP table construction, recurrence relation, and traceback mechanism in plain English.
+
+---
+
+### P-41 · Algorithm Verification (Manual Trace)
+**Date:** 29 April 2026
+**Category:** 🧠 Academic Discussion
+
+> *"Can you verify against this case. Item 1 2kg 3rs. Item 2 3kg 4rs. Item 3 4kg 5rs. Capacity 5kgs"*
+
+**Intent Analysis:** The user provided a custom test case to manually trace and verify the DP algorithm's correctness, demonstrating a rigorous academic approach to testing.
+
+**Outcome:** Manually traced the DP table and traceback for the custom case, proving it selects Item 1 + Item 2 (₹7), and contrasted it with the Hint Engine's behavior.
+
+---
+
+### P-42 · Usage Report Update
+**Date:** 29 April 2026
+**Category:** 📄 Documentation
+
+> *"Recheck the prompt and token usage in the entire conversation since the start of the project"*
+
+**Intent Analysis:** The user wanted this very report updated to reflect the latest deep-dive academic discussions.
+
+**Outcome:** Updated `PROMPT_USAGE_REPORT.md` with P-36 through P-42 and recalculated token estimates.
+
+---
+
 ## Prompt Pattern Analysis
 
 ### Patterns Observed
@@ -487,6 +572,9 @@ P-26 ("complete creative freedom to structure it as you deem fit") is an example
 **6. Single-Sentence High-Impact Prompts**
 Many critical prompts were one sentence or less (P-06 "Sure", P-08 "Are we ready to start?", P-12 "Lets start with the next phase!"). In a well-primed context, minimal prompts can trigger substantial work.
 
+**7. Academic Rigor and Edge-Case Testing**
+In later sessions (P-37 to P-41), the user shifted from project manager to academic examiner, stress-testing the AI's algorithm explanations, identifying a legitimate flaw in the heuristic (P-38), and providing custom test cases for manual verification (P-41). This demonstrates a deep, conceptual engagement with the project's core subject matter.
+
 ---
 
 ## Total Tokens Estimate
@@ -503,7 +591,8 @@ Many critical prompts were one sentence or less (P-06 "Sure", P-08 "Are we ready
 | Game 2 + Localization (P-22 to P-33) | ~400 | ~20,000 |
 | Documentation Rework (P-26 to P-28) | ~800 | ~15,000 |
 | Master Doc + This Report (P-34, P-35) | ~200 | ~5,000 |
-| **Total (estimate)** | **~3,400** | **~86,000** |
+| Academic Discussion (P-36 to P-42) | ~400 | ~8,000 |
+| **Total (estimate)** | **~3,800** | **~94,000** |
 
 ---
 
